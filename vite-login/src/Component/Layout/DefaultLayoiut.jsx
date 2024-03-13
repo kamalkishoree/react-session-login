@@ -27,9 +27,8 @@ const logout = (e) => {
 export default function DefaultLayout() {
   const { currentUser, userToken, setCurrentUser, SetUserToken } =
     useStateContext();
-  console.log(userToken);
-  if (userToken) {
-    <return Navigate to="/login" />;
+  if (!userToken) {
+    return <Navigate to="/login" />;
   }
   return (
     <>
