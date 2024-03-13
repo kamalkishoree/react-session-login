@@ -7,7 +7,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/outline";
 import { NavLink, Navigate, Outlet } from "react-router-dom";
-import { userStateContext } from "../../Contexts/ContextProvider";
+import { useStateContext } from "../../Contexts/ContextProvider";
 
 const navigation = [
   { name: "Dashboard", to: "/", current: true },
@@ -26,10 +26,10 @@ const logout = (e) => {
 
 export default function DefaultLayout() {
   const { currentUser, userToken, setCurrentUser, SetUserToken } =
-    userStateContext();
+    useStateContext();
   console.log(userToken);
-  if (!userToken) {
-    return <Navigate to="/login" />;
+  if (userToken) {
+    <return Navigate to="/login" />;
   }
   return (
     <>

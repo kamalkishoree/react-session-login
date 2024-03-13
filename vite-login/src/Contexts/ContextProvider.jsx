@@ -75,4 +75,4 @@ const ContextProvider = ({ children }) => {
   );
 };
 export default ContextProvider;
-export const userStateContext = () => useContext(stateContext);
+export const useStateContext = () => useContext(stateContext);
